@@ -13,23 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.plataformas.labs_apis.R
 import com.plataformas.labs_apis.database.Character
 
-class Adapter (private val dataSet: MutableList<Character>,
-               private val listener: RecyclerViewCharacterClickHandler)
-    : RecyclerView.Adapter<Adapter.ViewHolder>(){
+class Adapter (private val dataSet: MutableList<Character>, private val listener: RecyclerViewCharacterClickHandler) : RecyclerView.Adapter<Adapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_recycler_place, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view, listener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(dataSet[position])
     }
 
-    class ViewHolder(private val view: View,
-                     private val listener: RecyclerViewCharacterClickHandler
-    ) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(private val view: View, private val listener: RecyclerViewCharacterClickHandler) : RecyclerView.ViewHolder(view) {
+
         private val imageType: ImageView = view.findViewById(R.id.item_image)
         private val textName: TextView = view.findViewById(R.id.item_name)
         private val textStatus: TextView = view.findViewById(R.id.item_status)
@@ -62,6 +59,10 @@ class Adapter (private val dataSet: MutableList<Character>,
     interface RecyclerViewCharacterClickHandler {
 
         fun onCharacterClicked(character: Character)
+    }
+
+    override fun getItemCount(): Int {
+        return dataSet.size
     }
 
 }

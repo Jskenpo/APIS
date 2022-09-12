@@ -2,4 +2,6 @@
     <string name="app_name">LABS_APIS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ordenarAZ">Ordenar de A -Z</string>
+    <string name="ordenarZA">Ordenar de Z -A</string>
 </resources>
