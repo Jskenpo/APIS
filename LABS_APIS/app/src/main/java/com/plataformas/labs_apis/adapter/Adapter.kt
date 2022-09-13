@@ -27,29 +27,25 @@ class Adapter (private val dataSet: MutableList<Character>, private val listener
 
     class ViewHolder(private val view: View, private val listener: RecyclerViewCharacterClickHandler) : RecyclerView.ViewHolder(view) {
 
-        private val imageType: ImageView = view.findViewById(R.id.item_image)
-
-        private val textName: TextView = view.findViewById(R.id.item_name)
-
-        private val textStatus: TextView = view.findViewById(R.id.item_status)
-
-        private val textSpecies: TextView = view.findViewById(R.id.item_species)
-
-        private val layoutCharacter: ConstraintLayout = view.findViewById(R.id.item_recycler_place)
+        private val imagen: ImageView = view.findViewById(R.id.item_image)
+        private val name: TextView = view.findViewById(R.id.item_name)
+        private val status: TextView = view.findViewById(R.id.item_status)
+        private val species: TextView = view.findViewById(R.id.item_species)
+        private val layChar: ConstraintLayout = view.findViewById(R.id.item_recycler_place)
 
         fun setData(character: Character) {
-            textName.text = character.name
-            textStatus.text = character.status
-            textSpecies.text = character.species
-            imageData(character.image)
+            name.text = character.name
+            status.text = character.status
+            species.text = character.species
+            getImage(character.image)
 
-            layoutCharacter.setOnClickListener() {
+            layChar.setOnClickListener() {
                 listener.onCharacterClicked(character)
             }
         }
 
-        private fun imageData(image: String) {
-            imageType.load(image) {
+        private fun getImage(image: String) {
+            imagen.load(image) {
                 transformations(CircleCropTransformation())
                 error(R.drawable.ic_baseline_error_outline_24)
                 diskCachePolicy(CachePolicy.ENABLED)

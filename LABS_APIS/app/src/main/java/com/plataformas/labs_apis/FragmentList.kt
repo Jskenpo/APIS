@@ -23,7 +23,6 @@ class FragmentList() : Fragment(R.layout.fragment_list), Adapter.RecyclerViewCha
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById(R.id.listofCharacters)
         initRecycler()
-
     }
 
     private fun initRecycler() {
@@ -31,12 +30,13 @@ class FragmentList() : Fragment(R.layout.fragment_list), Adapter.RecyclerViewCha
         adapter = Adapter(list, this)
 
         recycler.layoutManager = LinearLayoutManager(requireContext())
+        recycler.setHasFixedSize(true)
         recycler.adapter = adapter
     }
 
     override fun onCharacterClicked(character: Character) {
-        val action = FragmentListDirections.actionFragmentListToCharacterDetailsFragment(character)
-        requireView().findNavController().navigate(action)
+        val some = FragmentListDirections.actionFragmentListToCharacterDetailsFragment(character)
+        requireView().findNavController().navigate(some)
     }
 
 

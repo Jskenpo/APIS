@@ -16,11 +16,11 @@ import coil.transform.CircleCropTransformation
 class Character_Details_Fragment : Fragment(R.layout.fragment_character__details_) {
 
 
-    lateinit var imagen : ImageView
-    lateinit var nombre : TextView
-    lateinit var estado : TextView
-    lateinit var especie : TextView
-    lateinit var genero : TextView
+    private lateinit var imagen : ImageView
+    private lateinit var nombre : TextView
+    private lateinit var estado : TextView
+    private lateinit var especie : TextView
+    private lateinit var genero : TextView
     private val args: Character_Details_FragmentArgs by navArgs()
 
 
@@ -31,6 +31,7 @@ class Character_Details_Fragment : Fragment(R.layout.fragment_character__details
         estado = view.findViewById(R.id.text_details_status)
         especie = view.findViewById(R.id.text_details_species)
         genero = view.findViewById(R.id.text_details_gender)
+        getCharacterDetails()
     }
 
     @SuppressLint("SetTextI18n")
