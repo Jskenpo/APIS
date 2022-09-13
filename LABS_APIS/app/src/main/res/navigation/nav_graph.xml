@@ -18,5 +18,9 @@
         android:id="@+id/character_Details_Fragment"
         android:name="com.plataformas.labs_apis.Character_Details_Fragment"
         android:label="fragment_character__details_"
-        tools:layout="@layout/fragment_character__details_" />
+        tools:layout="@layout/fragment_character__details_" >
+        <argument
+            android:name="character"
+            app:argType="com.plataformas.labs_apis.database.Character" />
+    </fragment>
 </navigation>

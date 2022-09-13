@@ -28,9 +28,13 @@ class Adapter (private val dataSet: MutableList<Character>, private val listener
     class ViewHolder(private val view: View, private val listener: RecyclerViewCharacterClickHandler) : RecyclerView.ViewHolder(view) {
 
         private val imageType: ImageView = view.findViewById(R.id.item_image)
+
         private val textName: TextView = view.findViewById(R.id.item_name)
+
         private val textStatus: TextView = view.findViewById(R.id.item_status)
+
         private val textSpecies: TextView = view.findViewById(R.id.item_species)
+
         private val layoutCharacter: ConstraintLayout = view.findViewById(R.id.item_recycler_place)
 
         fun setData(character: Character) {

@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_details"
-        android:text="%s"
+        android:text="Nombre"
         android:textSize="30dp"
         android:textColor="@color/black"
         android:layout_marginTop="20dp"
@@ -32,23 +32,39 @@
         />
     
     <TextView
+        android:id="@+id/text_details_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/text_details_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/text_details_species"
-        android:text="Status: "
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Species: %s"
+        android:textSize="20dp"
+
 
         />
     <TextView
-        android:id="@+id/text_details_species"
+        android:id="@+id/text_details_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/text_details_name"
-        app:layout_constraintStart_toEndOf="@+id/text_details_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_details_species"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:text="Status: %s"
+        android:textSize="20dp"
 
     />
+    <TextView
+        android:id="@+id/text_details_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_details_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Género: %s"
+        android:textSize="20dp"
+        />
+
 
 
 
