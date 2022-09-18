@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
 
         controlador = navHostFragment.navController
-        val appBarConfig = AppBarConfiguration(controlador.graph)
+        val configTbar = AppBarConfiguration(controlador.graph)
         tbar = findViewById(R.id.toolbar)
-        tbar.setupWithNavController(controlador, appBarConfig)
+        tbar.setupWithNavController(controlador, configTbar)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
