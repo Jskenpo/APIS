@@ -1,5 +1,6 @@
 package com.plataformas.labs_apis.datasource.api
 
+import com.plataformas.labs_apis.datasource.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,14 +18,14 @@ class RetrofitInstance {
                 .build()
 
             Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
         }
 
         val api by lazy {
-            retrofit.create(null)
+            retrofit.create(RickMortyAPI::class.java)
         }
     }
 }
