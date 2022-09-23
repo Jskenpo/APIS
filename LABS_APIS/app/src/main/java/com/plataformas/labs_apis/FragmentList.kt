@@ -11,6 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.plataformas.labs_apis.adapter.Adapter
 import com.plataformas.labs_apis.database.Character
 import com.plataformas.labs_apis.database.RickAndMortyDB
+import com.plataformas.labs_apis.datasource.api.RetrofitInstance
+import com.plataformas.labs_apis.datasource.model.AllCharactersResponse
+import com.plataformas.labs_apis.datasource.model.DetailsCharacterResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class FragmentList() : Fragment(R.layout.fragment_list), Adapter.RecyclerViewCharacterClickHandler {
@@ -25,13 +31,32 @@ class FragmentList() : Fragment(R.layout.fragment_list), Adapter.RecyclerViewCha
         initRecycler()
     }
 
-    private fun initRecycler() {
-        list= RickAndMortyDB.getCharacters()
-        adapter = Adapter(list, this)
+    private fun initRecycler(characters: MutableList<DetailsCharacterResponse>) {
+        this.characters = characters
 
-        recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.setHasFixedSize(true)
-        recycler.adapter = adapter
+        adapter = CharacterAdapter(this.characters, this)
+        recyclerCharacters.layoutManager = LinearLayoutManager(requireContext())
+        recyclerCharacters.setHasFixedSize(true)
+        recyclerCharacters.adapter = adapter
+    }
+
+    private fun getCharacters() {
+        RetrofitInstance.api.getCharacters().enqueue(object: Callback<AllCharactersResponse> {
+            override fun onResponse(
+                call: Call<AllCharactersResponse>,
+                response: Response<AllCharactersResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val res = response.body()?.results
+                    setupRecycler(res ?: mutableListOf())
+                }
+            }
+
+            override fun onFailure(call: Call<CharactersResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), getString(R.string.error_fetching), Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 
     override fun onCharacterClicked(character: Character) {
