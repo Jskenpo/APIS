@@ -64,6 +64,26 @@
         android:text="Género: %s"
         android:textSize="20dp"
         />
+    <TextView
+        android:id="@+id/text_details_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_details_gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Origen: %s"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/text_details_episodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_details_origin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Aparece en %s episodios"
+        android:textSize="20dp"
+        />
 
 
 

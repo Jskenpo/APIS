@@ -30,7 +30,7 @@ class FragmentList : Fragment(R.layout.fragment_list), Adapter.RecyclerViewChara
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById(R.id.listofCharacters)
-        initRecycler()
+        getCharacters()
     }
 
     private fun initRecycler(personajes: MutableList<DetailsCharacterResponse>) {
@@ -62,9 +62,11 @@ class FragmentList : Fragment(R.layout.fragment_list), Adapter.RecyclerViewChara
     }
 
     override fun onItemClicked(character: DetailsCharacterResponse) {
-        val action = FragmentListDirections.actionFragmentListToCharacterDetailsFragment(character.id.toInt())
+        val action = FragmentListDirections.actionFragmentListToCharacterDetailsFragment(character.id)
         view?.findNavController()?.navigate(action)
     }
 
 
 }
+
+
