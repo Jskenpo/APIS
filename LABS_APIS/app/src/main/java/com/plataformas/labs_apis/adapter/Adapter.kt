@@ -34,7 +34,6 @@ class Adapter (
         private val view: View,
         private val listener: RecyclerViewCharacterClickHandler)
         : RecyclerView.ViewHolder(view) {
-
         private val imagen: ImageView = view.findViewById(R.id.item_image)
         private val nombre: TextView = view.findViewById(R.id.item_name)
         private val estado: TextView = view.findViewById(R.id.item_status)
@@ -58,23 +57,13 @@ class Adapter (
             }
         }
 
-        private fun getImage(image: String) {
-            imagen.load(image) {
-                transformations(CircleCropTransformation())
-                error(R.drawable.ic_baseline_error_outline_24)
-                diskCachePolicy(CachePolicy.ENABLED)
-                memoryCachePolicy(CachePolicy.ENABLED)
-            }
-        }
+
 
     }
 
 
     interface RecyclerViewCharacterClickHandler {
-
-        abstract var characters: MutableList<DetailsCharacterResponse>
-        fun onCharacterClicked(character: Character)
-
+        fun onItemClicked(character: DetailsCharacterResponse)
     }
 
     override fun getItemCount(): Int {

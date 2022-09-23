@@ -7,4 +7,5 @@
     <string name="username">Ingrese su correo electrónico</string>
     <string name="password">ingrese su contraseña</string>
     <string name="login">Iniciar sesión</string>
+    <string name="mensaje_error">No fue posible obtener valores del API</string>
 </resources>
