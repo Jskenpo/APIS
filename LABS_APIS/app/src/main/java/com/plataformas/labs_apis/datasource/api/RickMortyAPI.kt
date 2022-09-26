@@ -7,10 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RickMortyAPI {
-    @GET("/character")
+    @GET("/api/character")
     fun getCharacters(): retrofit2.Call<AllCharactersResponse>
 
-    @GET("/character/{id}")
-    fun getCharacterDetails(@Path("id") id: Int): retrofit2.Call<DetailsCharacterResponse>
-
+    @GET("/api/character/{id}")
+    fun getCharacterDetails(@Path("id") id: String): retrofit2.Call<DetailsCharacterResponse>
 }

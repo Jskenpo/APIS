@@ -47,7 +47,7 @@ class Character_Details_Fragment : Fragment(R.layout.fragment_character__details
 
 
     private fun getCharacterDetails() {
-        RetrofitInstance.api.getCharacterDetails(args.id).enqueue(object : Callback<DetailsCharacterResponse> {
+        RetrofitInstance.api.getCharacterDetails(args.id.toString()).enqueue(object : Callback<DetailsCharacterResponse> {
             override fun onResponse(call: Call<DetailsCharacterResponse>, response: Response<DetailsCharacterResponse>) {
                 if (response.isSuccessful && response.body() != null) {
                     dataCharacters(response.body()!!)
