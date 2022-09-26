@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragmentList"
         android:name="com.plataformas.labs_apis.FragmentList"
-        android:label="fragment_list"
+        android:label="Personajes"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_fragmentList_to_character_Details_Fragment"
@@ -17,10 +17,11 @@
     <fragment
         android:id="@+id/character_Details_Fragment"
         android:name="com.plataformas.labs_apis.Character_Details_Fragment"
-        android:label="fragment_character__details_"
+        android:label="Detalles de personaje"
         tools:layout="@layout/fragment_character__details_" >
         <argument
-            android:name="character"
-            app:argType="com.plataformas.labs_apis.database.Character" />
+            android:name="id"
+            app:argType="integer"
+            />
     </fragment>
 </navigation>
