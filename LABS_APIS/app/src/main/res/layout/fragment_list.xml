@@ -10,6 +10,8 @@
         android:id="@+id/toolbar_characterList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_toolbar"

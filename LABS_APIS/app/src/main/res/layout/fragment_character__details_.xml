@@ -6,6 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Character_Details_Fragment">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_characterDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_toolbar"
+        />
+
     <ImageView
         android:id="@+id/image_details"
         android:layout_width="150dp"
@@ -14,7 +25,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_characterDetails"
         tools:srcCompat="@tools:sample/avatars"
         />
     <TextView

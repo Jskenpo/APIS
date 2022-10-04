@@ -22,14 +22,8 @@ class MainActivity : AppCompatActivity() {
             R.id.containerView
         ) as NavHostFragment
 
-        controlador = navHostFragment.navController
-        val configTbar = AppBarConfiguration(controlador.graph)
-        tbar = findViewById(R.id.toolbar)
-        tbar.setupWithNavController(controlador, configTbar)
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
-        return true
-    }
+
 }
