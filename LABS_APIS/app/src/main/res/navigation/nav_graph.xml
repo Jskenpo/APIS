@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_fragmentList_to_character_Details_Fragment"
             app:destination="@id/character_Details_Fragment" />
+        <action
+            android:id="@+id/action_fragmentList_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/fragmentList"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
     <fragment

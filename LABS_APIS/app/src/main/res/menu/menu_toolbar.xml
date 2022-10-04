@@ -12,5 +12,9 @@
         android:id="@+id/ordenar_za"
         android:title="@string/ordenarZA"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/cerrarSesion"
+        android:title="cerrar sesión"
+        app:showAsAction="never" />
 
 </menu>
