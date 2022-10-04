@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentList">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/fragmentList"
@@ -14,6 +14,7 @@
             android:id="@+id/action_fragmentList_to_character_Details_Fragment"
             app:destination="@id/character_Details_Fragment" />
     </fragment>
+
     <fragment
         android:id="@+id/character_Details_Fragment"
         android:name="com.plataformas.labs_apis.Character_Details_Fragment"
@@ -23,5 +24,18 @@
             android:name="id"
             app:argType="integer"
             />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.plataformas.labs_apis.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentList"
+            app:destination="@id/fragmentList"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            />
+
     </fragment>
 </navigation>
