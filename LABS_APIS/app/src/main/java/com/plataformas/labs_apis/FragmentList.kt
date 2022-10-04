@@ -38,7 +38,10 @@ class FragmentList : Fragment(R.layout.fragment_list), Adapter.RecyclerViewChara
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById(R.id.listofCharacters)
+        toolbar = view.findViewById(R.id.toolbar_characterList)
         getCharacters()
+        setListeners()
+        setToolbar()
     }
 
     private fun setToolbar(){
