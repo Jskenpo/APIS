@@ -8,4 +8,5 @@
     <string name="password">ingrese su contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="mensaje_error">No fue posible obtener valores del API</string>
+    <string name="correo">san21153@uvg.edu.gt</string>
 </resources>

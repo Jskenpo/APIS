@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="san21153@uvg.edu.gt"
+        android:text="@string/correo"
         android:layout_marginBottom="20dp"
         />
 
